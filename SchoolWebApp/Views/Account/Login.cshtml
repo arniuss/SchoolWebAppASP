@@ -1,0 +1,22 @@
+﻿@using SchoolWebApp.ViewModels
+
+@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+<h1>Login</h1>
+<div class="text-danger" asp-validation-summary="All"></div>
+<form asp-action="Login" method="post">
+    <input type="hidden" asp-for="ReturnURL" />
+    <div class="form-group">
+        <label asp-for="Username"></label>
+        <input asp-for="Username" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" class="form-control" />
+        RememberMe? <input type="checkbox" asp-for="RememberMe" />
+    </div>
+    <button class="btn btn-primary" type="submit">Log In</button>
+</form>
